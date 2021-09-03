@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #add sub projects here
     'projects.apps.ProjectsConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
