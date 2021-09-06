@@ -49,7 +49,9 @@
                 <img class="project__thumbnail" src="{{ p.featured_image.url }}" alt="project thumbnail" />
                 <div class="card__body">
                   <h3 class="project__title">{{p.title}}</h3>
-                  <p><a class="project__author" href="{%url 'project' p.id%}">By {{p.owner.name}}</a></p>
+                  {% if p.owner.id %}
+                  <p><a class="project__author" href="{% url 'user-profile' p.owner.id %}">By {{p.owner.name}}</a></p>
+                  {% endif %}
                   <p class="project--rating">
                     <span style="font-weight: bold;">{{p.vote_ratio}}%</span> Positive
                     Feedback ({{p.vote_total}} Vote{{p.vote_total|pluralize:"s"}})
